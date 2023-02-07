@@ -1,22 +1,26 @@
 
-import {Card, Button,} from 'react-bootstrap';
+import {Card, Button, Container, Row} from 'react-bootstrap';
 import horror from "../arc/horror.json"
 
 function Books()
  {
   return (
-    {horror.map((book)=>{
-      return(    <Card style={{ width: '18rem' }} key={horror.asin}>
-      
-
-      <Card.Img variant="top" src={horror.img} />
+    horror.map((book)=>{
+    <Container>
+      return(   
+         
+          <Row md={4}>
+      <Card style={{ width: '18rem' }} key={book.asin} className=" mt-3">
+      <Card.Img variant="top" src={book.img} />
       <Card.Body>
-        <Card.Title>{horror.title}</Card.Title>
-        <Card.Text>{horror.price}</Card.Text>
-        <Button variant="primary d-flex justify-content-center">Order</Button>
+        <Card.Title>{book.title}</Card.Title>
+        <Card.Text>{book.price}</Card.Text>
+        <Button className="primary d-flex justify-content-center">Order</Button>
       </Card.Body>
-    </Card>)})
-    })}
+    </Card>
+    </Row>
+    )</Container>})
+    )}
 
   ;
 
