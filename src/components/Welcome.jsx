@@ -1,15 +1,12 @@
 
 import Card from 'react-bootstrap/Card';
 
-function BasicExample() {
+function BasicExample(prop) {
   return (
-    <Card style={{ width: '38rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card className="mt-5 bg-success w-100% mx-5" >
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Title className="text-center text-warning"><h1> {prop.MainTitle}</h1></Card.Title>
+        <Card.Text className="text-center mx-5"> <h5 className='text-danger'>{prop.BodyJumbotronCard}</h5>
         </Card.Text>
       </Card.Body>
     </Card>

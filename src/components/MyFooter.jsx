@@ -1,6 +1,6 @@
 import {Card, Button} from 'react-bootstrap';
 
-function HeaderAndFooterExample() {
+function Footer() {
   return (
     <Card className="text-center">
       <Card.Header>Featured</Card.Header>
@@ -16,4 +16,4 @@ function HeaderAndFooterExample() {
   );
 }
 
-export default HeaderAndFooterExample;
+export default Footer;
