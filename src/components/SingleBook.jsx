@@ -1,24 +1,33 @@
-import Card from"react-bootstrap/Card"
-import React from "react"
+import { Component } from "react";
+import { Card } from "react-bootstrap";
+// import CommentArea from "./CommentArea";
 
+class SingleBook extends Component {
+  state = {
+    selected: false,
+  };
 
-function SingleBook (prop) {
-    
+  render() {
     return (
-        <div class="col " >
-        <Card style={{ width: '18rem' }}className="book-cover mt-5 "xs={12} md={6} lg={3}>
-        <Card.Img variant="top" src={prop.book.img} />
+      <Card
+        style={{ border: this.state.selected ? "3px solid red" : "none" }}
+        className="my-3"
+      >
+        <Card.Img
+          style={{ height: "20em" }}
+          variant="top"
+          src={this.props.book.img}
+          onClick={() => this.setState({ selected: !this.state.selected })}
+        />
         <Card.Body>
-        <Card.Title>{prop.book.title}</Card.Title>
+          <Card.Title style={{ color: "black" }}>
+            {this.props.book.title}
+          </Card.Title>
+          {this.state.selected}
         </Card.Body>
-        </Card>
-        </div>
-
-
-    
-    )
+      </Card>
+    );
+  }
 }
-    
 
-
-export default SingleBook
+export default SingleBook;
